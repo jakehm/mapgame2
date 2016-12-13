@@ -1,7 +1,6 @@
 {
-  "name": "react-redux-starter-kit",
-  "version": "3.0.0-alpha.2",
-  "description": "Get started with React, Redux, and React-Router!",
+  "name": "Mapgame2",
+  "description": "Minimalistic MMO played on the world map.",
   "main": "index.js",
   "engines": {
     "node": ">=4.5.0",
@@ -71,10 +70,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/davezuko/react-redux-starter-kit.git"
+    "url": "git+https://github.com/jakehm/mapgame2.git"
   },
-  "author": "David Zukowski <david@zuko.me> (http://zuko.me)",
-  "license": "MIT",
+  "author": "Jacob Harrow-Mortelliti <jake@jakehm.com> (http://jakehm.com)",
+  "license": "beerware",
   "dependencies": {
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",
