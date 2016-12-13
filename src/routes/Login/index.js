@@ -7,7 +7,15 @@ export default (store) => ({
       './containers/LoginContainer',
       './modules/auth'
     ], (require) => {
-      //insert stuff here
+			const Login = require('./containers/LoginContainer').default
+			const loginReducer = require('./modules/login').default
+
+			injectReducer(store, {
+				key: 'login',
+				reducer: loginReducer
+			})
+
+			next(null, Login)
     })
   }
 })
