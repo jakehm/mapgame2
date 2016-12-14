@@ -1,4 +1,5 @@
-import React from 'react'
+import { connect } from react-redux'
+import { login, register, fetchUser, logout } from '../actions/login'
 
 export const Login = () => (
   <div>
