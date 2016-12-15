@@ -8,13 +8,13 @@ const mapStateToProps = state => ({
 	currentUser: state.currentUser
 })
 
-const mapDispatchToProps dispatch => ({
+const mapDispatchToProps = dispatch => (
 	bindActionCreators({ fetchUser, logout }, dispatch)
-})
+)
 
 class Login extends React.Component {
 
-	contructor (props) {
+	constructor (props) {
 		super(props)
 		this.props.fetchUser()
 		this.logout = this.logout.bind(this)
@@ -40,6 +40,48 @@ class Login extends React.Component {
 					</ul>
 				</li>
 			)
+    else
+      return [
+        <li key={1}><Link to="/login">Login</Link></li>,
+        <li key={2}><Link to="/register">Register</Link></li>
+      ]
+  }
+
+    render() {
+    return (
+      <div>
+        <header className="navbar navbar-static-top navbar-inverse" id="top" role="banner">
+          <div className="container">
+            <div className="navbar-header">
+              <button className="navbar-toggle collapsed" type="button" data-toggle="collapse"
+                      data-target=".bs-navbar-collapse"><span className="sr-only">Toggle navigation</span>
+                <span className="icon-bar"></span>
+                <span className="icon-bar"></span>
+                <span className="icon-bar"></span>
+              </button>
+              <Link to="/" className="navbar-brand">Login Page</Link>
+
+            </div>
+            <nav className="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+              <ul className="nav navbar-nav">
+                <li><Link to="/"> Home</Link></li>
+                ,
+              </ul>
+              <ul className="nav navbar-nav navbar-right">
+                { this.renderUserMenu(this.props.currentUser) }
+              </ul>
+            </nav>
+          </div>
+        </header>
+
+        <div className="container">
+          {this.props.children}
+        </div>
+      </div>
+    );
+  }
+}
+
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login)

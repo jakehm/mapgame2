@@ -5,10 +5,10 @@ export default (store) => ({
   getComponent (nextState, next) {
     require.ensure([
       './containers/LoginContainer',
-      './modules/auth'
+      './reducers'
     ], (require) => {
 			const Login = require('./containers/LoginContainer').default
-			const loginReducer = require('./modules/login').default
+			const loginReducer = require('./reducers').default
 
 			injectReducer(store, {
 				key: 'login',
