@@ -73,7 +73,7 @@
     "url": "git+https://github.com/jakehm/mapgame2.git"
   },
   "author": "Jacob Harrow-Mortelliti <jake@jakehm.com> (http://jakehm.com)",
-  "license": "beerware",
+  "license": "Beerware",
   "dependencies": {
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",

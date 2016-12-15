@@ -3,6 +3,8 @@ import { bindActionCreators } from 'redux'
 import { login, register, fetchUser, logout } from '../actions/login'
 import React from 'react'
 import { Link } from 'react-router'
+import { Navbar, Nav, NavItem, NavDropDown, MenuItem } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 
 const mapStateToProps = state => ({
 	currentUser: state.currentUser
@@ -36,7 +38,7 @@ class Login extends React.Component {
 					<ul className="dropdown-menu">
 						<li><Link to="/profile">Profile</Link></li>
 						<li role="separator" className="divider"></li>
-						<li><Link to="/logout" onClick={this.logOut}>Logout</Link></li>
+						<li><Link to="/logout" onClick={this.logout}>Logout</Link></li>
 					</ul>
 				</li>
 			)
@@ -50,21 +52,17 @@ class Login extends React.Component {
     render() {
     return (
       <div>
-        <header className="navbar navbar-static-top navbar-inverse" id="top" role="banner">
-          <div className="container">
-            <div className="navbar-header">
-              <button className="navbar-toggle collapsed" type="button" data-toggle="collapse"
-                      data-target=".bs-navbar-collapse"><span className="sr-only">Toggle navigation</span>
-                <span className="icon-bar"></span>
-                <span className="icon-bar"></span>
-                <span className="icon-bar"></span>
-              </button>
-              <Link to="/" className="navbar-brand">Login Page</Link>
+				<Navbar collapseOnSelect>
+					<Navbar.Header>
+						<Navbar.Brand>
+							<Link to="/">Login Page</Link>
+						</Navbar.Brand>
+						<Navbar.Toggle />	
+					</Navbar.Header>
+					<Navbar.Collapse>
+						<Nav>
+							<NavItem><Link to="/"> Home</Link></NavItem>
 
-            </div>
-            <nav className="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-              <ul className="nav navbar-nav">
-                <li><Link to="/"> Home</Link></li>
                 ,
               </ul>
               <ul className="nav navbar-nav navbar-right">
