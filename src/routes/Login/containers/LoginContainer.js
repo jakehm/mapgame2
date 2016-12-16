@@ -3,8 +3,6 @@ import { bindActionCreators } from 'redux'
 import { login, register, fetchUser, logout } from '../actions/login'
 import React from 'react'
 import { Link } from 'react-router'
-import { Navbar, Nav, NavItem, NavDropDown, MenuItem } from 'react-bootstrap'
-import { Button } from 'react-bootstrap'
 
 const mapStateToProps = state => ({
 	currentUser: state.currentUser
@@ -52,17 +50,21 @@ class Login extends React.Component {
     render() {
     return (
       <div>
-				<Navbar collapseOnSelect>
-					<Navbar.Header>
-						<Navbar.Brand>
-							<Link to="/">Login Page</Link>
-						</Navbar.Brand>
-						<Navbar.Toggle />	
-					</Navbar.Header>
-					<Navbar.Collapse>
-						<Nav>
-							<NavItem><Link to="/"> Home</Link></NavItem>
+        <header className="navbar navbar-static-top navbar-inverse" id="top" role="banner">
+          <div className="container">
+            <div className="navbar-header">
+              <button className="navbar-toggle collapsed" type="button" data-toggle="collapse"
+                      data-target=".bs-navbar-collapse"><span className="sr-only">Toggle navigation</span>
+                <span className="icon-bar"></span>
+                <span className="icon-bar"></span>
+                <span className="icon-bar"></span>
+              </button>
+              <Link to="/" className="navbar-brand">Mapgame Login</Link>
 
+            </div>
+            <nav className="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+              <ul className="nav navbar-nav">
+                <li><Link to="/"> Home</Link></li>
                 ,
               </ul>
               <ul className="nav navbar-nav navbar-right">
@@ -79,7 +81,5 @@ class Login extends React.Component {
     );
   }
 }
-
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login)
