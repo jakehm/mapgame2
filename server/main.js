@@ -33,6 +33,13 @@ if (project.env === 'development') {
   }))
   app.use(require('webpack-hot-middleware')(compiler))
 
+	//trying to get cors working
+	app.use(function(req, res, next) {
+		  res.header("Access-Control-Allow-Origin", "*");
+		  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+		  next();
+	});
+
   // Serve static assets from ~/public since Webpack is unaware of
   // these files. This middleware doesn't need to be enabled outside
   // of development since this directory will be copied into ~/dist

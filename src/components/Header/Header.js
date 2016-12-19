@@ -4,7 +4,7 @@ import './Header.scss'
 
 export const Header = () => (
   <div>
-    <h1>Map Game</h1>
+    <h1>test </h1>
     <IndexLink to='/' activeClassName='route--active'>
       Home
     </IndexLink>
