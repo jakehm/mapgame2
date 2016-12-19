@@ -59,6 +59,8 @@ const FireBaseTools = {
       const unsub = firebaseAuth.onAuthStateChanged(user => {
         unsub()
         resolve(user)
+      }, error => {
+        reject(error)
       })
     })
   },
