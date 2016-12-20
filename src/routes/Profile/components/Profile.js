@@ -30,7 +30,7 @@ export default class Profile extends React.Component {
 	}
 
 	render() {
-		if (!this.props.profile.currentUser) {
+		if (!this.props.currentUser) {
 			return <Loading/>
 		}
 

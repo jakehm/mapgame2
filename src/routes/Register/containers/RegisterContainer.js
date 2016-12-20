@@ -11,7 +11,7 @@ function mapDispatchToProps (dispatch) {
 }
   
 const mapStateToProps = (state) => ({
-  currentUser: state.currentUser
+  currentUser: state.register.currentUser
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Register)

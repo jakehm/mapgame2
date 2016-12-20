@@ -5,11 +5,11 @@ export default (store) => ({
   getComponent (nextState, next) {
     require.ensure([], (require) => {
 			const Register = require('./containers/RegisterContainer').default
-			const registerReducer = require('../../reducers').default
+			const reducer = require('../../reducers').default
 
 			injectReducer(store, {
 				key: 'register',
-				reducer: registerReducer
+				reducer
 			})
 
 			next(null, Register)

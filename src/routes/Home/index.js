@@ -7,11 +7,11 @@ export default (store) => ({
       '../../reducers'
     ], (require) => {
       const Home = require('./containers/HomeContainer').default
-      const homeReducer = require('../../reducers').default
+      const reducer = require('../../reducers').default
 
       injectReducer(store, {
         key: 'home',
-        reducer: homeReducer
+        reducer
       })
 
       next(null, Home)

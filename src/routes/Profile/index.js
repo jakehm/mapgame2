@@ -10,7 +10,7 @@ export default (store) => ({
       /*  Webpack - use require callback to define
           dependencies for bundling   */
       const Profile = require('./containers/ProfileContainer').default
-			const reducer = require('../../reducers/userReducer').default
+			const reducer = require('../../reducers').default
 
       /*  Add the reducer to the store on key 'counter'  */
       injectReducer(store, { 

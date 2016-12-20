@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
 
-export default class Header extends React.Component {
+export default class Home extends React.Component {
 
   constructor (props) {
     super(props)
@@ -48,7 +48,7 @@ export default class Header extends React.Component {
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
               </button>
-              <Link to="/" className="navbar-brand">Map Game</Link>
+              <Link to="/" className="navbar-brand">Mapgame Login</Link>
 
             </div>
             <nav className="collapse navbar-collapse bs-navbar-collapse" role="navigation">
