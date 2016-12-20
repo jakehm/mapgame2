@@ -6,6 +6,8 @@ import LoginRoute from './Login'
 import RegisterRoute from './Register'
 import ProfileRoute from './Profile'
 
+import requireAuth from 'utils/authenticated'
+
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
 
@@ -17,7 +19,12 @@ export const createRoutes = (store) => ({
     CounterRoute(store),
     LoginRoute(store),
     RegisterRoute(store),
-    ProfileRoute(store)
+		{
+			onEnter: requireAuth,
+			childRoutes: [
+    		ProfileRoute(store)
+			]
+		}
   ]
 })
 
